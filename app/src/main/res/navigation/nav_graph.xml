@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="mx.itesm.navegacionam.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_simpleFragment"
+            app:destination="@id/simpleFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_argsFragment"
+            app:destination="@id/argsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/simpleFragment"
+        android:name="mx.itesm.navegacionam.SimpleFragment"
+        android:label="fragment_simple"
+        tools:layout="@layout/fragment_simple" />
+    <fragment
+        android:id="@+id/argsFragment"
+        android:name="mx.itesm.navegacionam.ArgsFragment"
+        android:label="fragment_args"
+        tools:layout="@layout/fragment_args" >
+        <argument
+            android:name="stringcito"
+            app:argType="string" />
+        <argument
+            android:name="floatcito"
+            app:argType="float" />
+    </fragment>
+    <action android:id="@+id/action_global_mainFragment" app:destination="@id/mainFragment" />
+</navigation>
